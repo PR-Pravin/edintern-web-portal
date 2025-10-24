@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EDINTERN - Internship Registration</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        
+        /* Navigation styles from home page */
+        #nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1f3c88;
+            padding: 10px 20px;
+            color: white;
+        }
+        #nav img {
+            height: 50px;
+        }
+        #nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+        #nav ul li {
+            display: inline;
+        }
+        #nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #nav ul li a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            #nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Original form styles */
+        .header {
+            background-color: #1f3c88;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            clear: both;
+            margin-top: 20px;
+        }
+        .header img {
+            height: 50px;
+            float: left;
+            margin-right: 20px;
+        }
+        .header h2 {
+            margin: 0;
+        }
+        form {
+            background: white;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        input[type="button"] {
+            background-color: #1f3c88;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            width: 100%;
+        }
+        input[type="button"]:hover {
+            background-color: #0e2d68;
+        }
+        @media (max-width: 600px) {
+            form {
+                padding: 20px;
+                margin: 20px;
+            }
+            .header img {
+                float: none;
+                margin: 0 auto 10px;
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Added navigation from home page -->
+    <div id="nav">
+        <div>
+            <img src="logo1.jpeg" alt="EDINTERN Logo">
+            <img src="logo3.jpeg" alt="Accreditation" style="margin-left: 30px;">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="internshipapp.html">Internship Application</a></li>
+            <li><a href="job application.html">Job Application</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+
+    <div class="header">
+       
+        <h2>EDINTERN Internship Application<sub></sub></h2>
+    </div>
+
+    <form id="internForm">
+        <label for="name">Name:</label>
+        <input type="text" name="Name" placeholder="Enter your name" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" name="dob" required>
+
+        <label for="Email">Email:</label>
+        <input type="text" name="Email" placeholder="e.g. name@gmail.com" required>
+
+        <label for="Phoneno">Phone-no:</label>
+        <input type="text" name="phone" required>
+
+        <label for="whatsappno">WhatsApp-no:</label>
+        <input type="text" name="whatsapp" required>
+
+        <label for="aadno">Aadhar no:</label>
+        <input type="text" name="aadharno" required>
+
+        <label for="State">State:</label>
+        <select name="state" required>
+            <option value="" hidden>Select</option>
+            <option value="ta">Tamil Nadu</option>
+            <option value="ka">Karnataka</option>
+            <option value="as">Assam</option>
+            <option value="ke">Kerala</option>
+        </select>
+
+        <label for="DistrictName">District Name:</label>
+        <select name="District" required>
+            <option value="" hidden>Select</option>
+            <option value="s">Salem</option>
+            <option value="coi">Coimbatore</option>
+            <option value="ka">Karur</option>
+            <option value="na">Namakkal</option>
+            <option value="er">Erode</option>
+        </select>
+
+        <label for="collegename">College Name:</label>
+        <input type="text" name="colname" placeholder="College Name" required>
+
+        <label for="collegeaddress">College Address:</label>
+        <input type="text" name="collegeaddress" placeholder="College Address" required>
+
+        <label for="domaintype">Domain Type:</label>
+        <select name="domaintype" required>
+            <option value="" hidden>Select</option>
+            <option value="cs">College Student</option>
+            <option value="ot">Other</option>
+        </select>
+
+        <label for="department">Department Name:</label>
+        <select name="department" required>
+            <option value="" hidden>Select</option>
+            <option value="cse">Computer Science and Engineering</option>
+            <option value="ece">Electronics and Communication Engineering</option>
+            <option value="eee">Electrical and Electronics Engineering</option>
+            <option value="ot">Other</option>
+        </select>
+
+        <label>Mode:</label>
+        <input type="radio" name="mode" value="offline" required>Offline
+        <input type="radio" name="mode" value="online" required>Online
+
+        <label>Select Topic:</label>
+        <input type="checkbox" name="select" value="wt">Web Technology<br>
+        <input type="checkbox" name="select" value="pds">Python With Data Science<br>
+        <input type="checkbox" name="select" value="pm">Python MySQL<br>
+
+        <label for="otherTopic">Other Topic Name:</label>
+        <input type="text" name="otherTopic" placeholder="If any other topic">
+
+        <label for="duration">Duration:</label>
+        <select name="duration" required>
+            <option value="" hidden>Select</option>
+            <option value="2w">2 Weeks</option>
+            <option value="4w">4 Weeks</option>
+            <option value="6w">6 Weeks</option>
+        </select>
+
+        <input type="button" value="Submit" onclick="validateForm()">
+    </form>
+
+    <script>
+        function validateForm() {
+            alert("Form submitted successfully!");
+            // You can add real validations here if needed.
+        }
+    </script>
+
+</body>
+</html>

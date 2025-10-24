@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EDINTERN - Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        
+        /* Navigation styles from home page */
+        #nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1f3c88;
+            padding: 10px 20px;
+            color: white;
+        }
+        #nav img {
+            height: 50px;
+        }
+        #nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+        #nav ul li {
+            display: inline;
+        }
+        #nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #nav ul li a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            #nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Login container styles */
+        .login-container {
+            width: 300px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .login-container h2 {
+            color: #1f3c88;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            padding: 12px;
+            background-color: #1f3c88;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        input[type=submit]:hover {
+            background-color: #0e2d68;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        @media (max-width: 400px) {
+            .login-container {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Added navigation from home page -->
+    <div id="nav">
+        <div>
+            <img src="logo1.jpeg" alt="EDINTERN Logo">
+            <img src="logo3.jpeg" alt="Accreditation" style="margin-left: 30px;">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="internshipapp.html">Internship Application</a></li>
+            <li><a href="job application.html">Job Application</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+
+    <div class="login-container">
+        <h2>Employee Login</h2>
+        <form onsubmit="return checkLogin()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+        function checkLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === "admin" && password === "1234") {
+                alert("Login successful!");
+                return true;
+            } else {
+                alert("Invalid credentials!");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EDINTERN - Employee Job Application</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: #eef2f7;
+            color: #333;
+        }
+        
+        /* Navigation styles from home page */
+        #nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1f3c88;
+            padding: 10px 20px;
+            color: white;
+        }
+        #nav img {
+            height: 50px;
+        }
+        #nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+        #nav ul li {
+            display: inline;
+        }
+        #nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #nav ul li a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            #nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Original form styles */
+        .header {
+            background-color: #1f3c88;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .header img {
+            height: 50px;
+            vertical-align: middle;
+            margin-right: 20px;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="file"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #1f3c88;
+            color: white;
+            padding: 12px 25px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0e2d68;
+        }
+
+        @media screen and (max-width: 600px) {
+            .form-container {
+                padding: 20px;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Added navigation from home page -->
+    <div id="nav">
+        <div>
+            <img src="logo1.jpeg" alt="EDINTERN Logo">
+            <img src="logo3.jpeg" alt="Accreditation" style="margin-left: 30px;">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="internshipapp.html">Internship Application</a></li>
+            <li><a href="job application.html">Job Application</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+
+    <div class="header">
+                <span style="font-size: 24px;">EDINTERN - Employee Job Application Form</span>
+    </div>
+
+    <div class="form-container">
+        <form id="empForm">
+            <label for="fullname">Full Name:</label>
+            <input type="text" name="fullname" placeholder="Enter your full name" required>
+
+            <label for="email">Email ID:</label>
+            <input type="email" name="email" placeholder="example@domain.com" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" name="phone" placeholder="e.g. 9876543210" required>
+
+            <label for="position">Position Applying For:</label>
+            <input type="text" name="position" placeholder="e.g. Software Developer" required>
+
+            <label for="experience">Years of Experience:</label>
+            <input type="number" name="experience" placeholder="e.g. 2" required>
+
+            <label for="skills">Key Skills:</label>
+            <input type="text" name="skills" placeholder="e.g. Java, Python, Communication Skills" required>
+
+            <label for="qualification">Highest Qualification:</label>
+            <select name="qualification" required>
+                <option hidden>Select</option>
+                <option value="ug">UG Degree</option>
+                <option value="pg">PG Degree</option>
+                <option value="diploma">Diploma</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="resume">Upload Resume:</label>
+            <input type="file" name="resume" accept=".pdf,.doc,.docx" required>
+
+            <input type="submit" value="Apply Now">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("empForm").addEventListener("submit", function(event) {
+            alert("Application submitted successfully!");
+            // Add any form validations or backend calls here if needed.
+            event.preventDefault(); // Prevent actual submission for demo
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About - EDINTERN</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+        
+        /* Navigation styles from home page */
+        #nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1f3c88;
+            padding: 10px 20px;
+            color: white;
+        }
+        #nav img {
+            height: 50px;
+        }
+        #nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+        #nav ul li {
+            display: inline;
+        }
+        #nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #nav ul li a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            #nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Original about page styles */
+        .header {
+            background-color: #1f3c88;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        h2, h3 {
+            color: #1f3c88;
+        }
+
+        .branch {
+            margin-bottom: 30px;
+        }
+
+        .info {
+            background-color: #f0f0f0;
+            padding: 10px 15px;
+            border-left: 5px solid #1f3c88;
+            margin-top: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1f3c88;
+            color: white;
+            margin-top: 40px;
+        }
+
+        a {
+            color: #1f3c88;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Added navigation from home page -->
+    <div id="nav">
+        <div>
+            <img src="logo1.jpeg" alt="EDINTERN Logo">
+            <img src="logo3.jpeg" alt="Accreditation" style="margin-left: 30px;">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="internshipapp.html">Internship Application</a></li>
+            <li><a href="job application.html">Job Application</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+
+    <div class="header">
+        <h1>About EDINTERN</h1>
+    </div>
+
+    <div class="content">
+        <h2>Company Overview</h2>
+        <p><strong>EDINTERN</strong> was created by <strong>Pravin PR</strong> in 2022 with a vision to provide top-tier internship and job opportunities across India. The company has quickly grown into a trusted platform for students and professionals.</p>
+
+        <h3>Leadership Team</h3>
+        <ul>
+            <li><strong>CEO:</strong> Karthikeyan S</li>
+            <li><strong>Salem Branch Manager:</strong> Sanjay HS</li>
+            <li><strong>Chennai Branch Manager:</strong> Pranav</li>
+        </ul>
+
+        <h3>Branches</h3>
+
+        <div class="branch">
+            <h4>Salem Branch (Established 2022)</h4>
+            <div class="info">
+                <p><strong>Address:</strong> 5-6/195A, First Floor, Gokulkrishnan Street,<br>
+                Advaitha Ashram Road, Salem, Tamil Nadu 636004</p>
+                <p><strong>Phone:</strong> +91 93644 12345</p>
+                <p><strong>Website:</strong> <a href="https://techquest.asia" target="_blank">techquest.asia</a></p>
+                <p><strong>Working Hours:</strong> Closed · Opens tomorrow at 09:00</p>
+                <p><strong>Employees:</strong> 250</p>
+            </div>
+        </div>
+
+        <div class="branch">
+            <h4>Chennai Branch (Established 2024)</h4>
+            <div class="info">
+                <p><strong>Address:</strong> NEW NO:17, OLD NO:01, Navalar High Road,<br>
+                Saligramam, Chennai, Tamil Nadu 600093</p>
+                <p><strong>Phone:</strong> +91 89393 21801</p>
+                <p><strong>Employees:</strong> 250</p>
+            </div>
+        </div>
+
+        <h3>Contact & Support</h3>
+        <p>For more details or queries, reach out to our support team:</p>
+        <ul>
+            <li>Email: <a href="mailto:info@edintern.com">info@edintern.com</a></li>
+            <li>Phone: +91 93644 12345 (Salem) / +91 89393 21801 (Chennai)</li>
+            <li>Website: <a href="https://techquest.asia" target="_blank">www.techquest.asia</a></li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        &copy; 2023 EDINTERN. All rights reserved.
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EDINTERN-Home</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        #nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1f3c88;
+            padding: 10px 20px;
+            color: white;
+        }
+        #nav img {
+            height: 50px;
+        }
+        #nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+        #nav ul li {
+            display: inline;
+        }
+        #nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .slides {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+        }
+        .slide img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+        .para {
+            padding: 20px;
+            background: #fff;
+            margin: 20px auto;
+            max-width: 90%;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        #a00 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .a00 {
+            background-color: white;
+            width: 45%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .a00 h3 {
+            margin-top: 0;
+            color: #1f3c88;
+        }
+        .a00 ul {
+            padding-left: 20px;
+        }
+        @media (max-width: 768px) {
+            .a00 {
+                width: 90%;
+            }
+            #nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="nav">
+        <div>
+            <img src="logo1.jpeg" alt="Logo">
+            <img src="logo3.jpeg" alt="Accreditation" style="margin-left: 30px;">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="internshipapp.html">Internship Application</a></li>
+            <li><a href="employee_application.html">Job Application</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+
+    <div class="slides">
+        <div class="slide"><img src="img1.jpeg" alt="Slide 1"></div>
+        <div class="slide"><img src="img2.jpeg" alt="Slide 2"></div>
+        <div class="slide"><img src="img3.jpeg" alt="Slide 3"></div>
+        <div class="slide"><img src="img4.jpeg" alt="Slide 4"></div>
+    </div>
+
+    <div class="para">
+        <p><strong>Internships</strong> offer valuable industry exposure, helping you build soft skills and professional knowledge. They are essential for preparing yourself for your dream career while gaining hands-on experience in your chosen field.</p>
+    </div>
+
+    <div id="a00">
+        <div class="a00">
+            <h3>Technical Internships</h3>
+            <ul>
+                <li>Technology Internship Program</li>
+                <li>Software Engineering Internship</li>
+                <li>IT Internship</li>
+                <li>Data Science Internship</li>
+                <li>Cybersecurity Internship</li>
+                <li>Web Development Internship</li>
+                <li>Network Engineering Internship</li>
+                <li>Computer Science Internship</li>
+                <li>Digital Marketing Internship</li>
+                <li>Hardware Engineering Internship</li>
+            </ul>
+        </div>
+
+        <div class="a00">
+            <h3>Technical Courses</h3>
+            <ul>
+                <li>Computer Science Fundamentals</li>
+                <li>Programming with Python</li>
+                <li>Data Structures and Algorithms</li>
+                <li>Web Development</li>
+                <li>Machine Learning and AI</li>
+                <li>Cybersecurity</li>
+                <li>Cloud Computing</li>
+                <li>Network Administration</li>
+                <li>Database Management</li>
+                <li>Software Engineering</li>
+            </ul>
+        </div>
+
+        <div class="a00">
+            <h3>Non-Technical Internships</h3>
+            <ul>
+                <li>Marketing and Communications Internship</li>
+                <li>Business Development Internship</li>
+                <li>HR Internship</li>
+                <li>Finance and Accounting Internship</li>
+                <li>Customer Relations Internship</li>
+                <li>Public Relations Internship</li>
+                <li>Graphic Design Internship</li>
+                <li>Event Planning Internship</li>
+                <li>Content Writing Internship</li>
+            </ul>
+        </div>
+
+        <div class="a00">
+            <h3>Non-Technical Courses</h3>
+            <ul>
+                <li>Business Management & Leadership</li>
+                <li>Marketing Strategies</li>
+                <li>Accounting & Financial Management</li>
+                <li>Human Resource Management</li>
+                <li>Project Management</li>
+                <li>Communication Skills</li>
+                <li>Time Management</li>
+                <li>Conflict Resolution</li>
+                <li>Personal Development</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+        }
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        setInterval(nextSlide, 3000); // 3 seconds per slide
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
