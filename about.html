@@ -1,170 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>About - EDINTERN</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            background-color: #f4f7fc;
-            color: #333;
-        }
-        
-        /* Navigation styles from home page */
-        #nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #1f3c88;
-            padding: 10px 20px;
-            color: white;
-        }
-        #nav img {
-            height: 50px;
-        }
-        #nav ul {
-            list-style-type: none;
-            display: flex;
-            gap: 20px;
-        }
-        #nav ul li {
-            display: inline;
-        }
-        #nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        #nav ul li a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            #nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About – EDINTERN</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-        /* Original about page styles */
-        .header {
-            background-color: #1f3c88;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .content {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 10px;
-        }
-
-        h2, h3 {
-            color: #1f3c88;
-        }
-
-        .branch {
-            margin-bottom: 30px;
-        }
-
-        .info {
-            background-color: #f0f0f0;
-            padding: 10px 15px;
-            border-left: 5px solid #1f3c88;
-            margin-top: 10px;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #1f3c88;
-            color: white;
-            margin-top: 40px;
-        }
-
-        a {
-            color: #1f3c88;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <style>
+    .stat-card {
+      text-align: center;
+      padding: 1.8rem 1.2rem;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      border-top: 4px solid var(--gold);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .stat-card .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: var(--navy);
+      font-weight: 700;
+    }
+    .stat-card .stat-label {
+      font-size: .88rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      margin-top: .25rem;
+    }
+    .branch-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .branch-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .branch-card .branch-head {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 1.1rem 1.5rem;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .branch-card .branch-head h4 { color: var(--white); margin: 0; font-size: 1.05rem; }
+    .branch-card .branch-body { padding: 1.4rem 1.5rem; }
+    .branch-card .branch-body p { margin: .35rem 0; font-size: .92rem; color: var(--text); }
+    .branch-card .branch-body i { color: var(--gold); width: 20px; }
+    .team-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: .55rem 1.2rem;
+      margin: .3rem;
+      font-size: .9rem;
+    }
+    .team-pill .role { font-weight: 600; color: var(--navy); font-size: .78rem; text-transform: uppercase; letter-spacing: .5px; }
+    .team-pill .name { color: var(--text); }
+    .team-pill .avatar {
+      width: 34px; height: 34px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white);
+      font-size: .85rem;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Added navigation from home page -->
-    <div id="nav">
-        <div>
-            <img src="logo1.jpeg" alt="EDINTERN Logo">
-            <img src="logo3.jpeg" alt="Accreditation" style="margin-left: 30px;">
-        </div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="internshipapp.html">Internship Application</a></li>
-            <li><a href="job application.html">Job Application</a></li>
-            <li><a href="login.html">Login</a></li>
+  <!-- ── Navbar ── -->
+  <nav class="ed-navbar navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="logo1.jpeg" alt="EDINTERN Logo" class="brand-logo">
+        <span class="brand-name">ED<span>INTERN</span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i>About</a></li>
+          <li class="nav-item"><a class="nav-link" href="internshipapp.html"><i class="bi bi-journal-text me-1"></i>Internship</a></li>
+          <li class="nav-item"><a class="nav-link" href="job_application.html"><i class="bi bi-briefcase me-1"></i>Job Application</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html"><i class="bi bi-person-circle me-1"></i>Login</a></li>
         </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <div class="ed-hero">
+    <h2><i class="bi bi-info-circle me-2"></i>About EDINTERN</h2>
+    <p>Empowering careers across India since 2022.</p>
+    <div class="gold-bar"></div>
+  </div>
+
+  <div class="container py-5">
+
+    <!-- Stats -->
+    <div class="row g-4 mb-5">
+      <div class="col-6 col-md-3">
+        <div class="stat-card">
+          <div class="stat-num">2022</div>
+          <div class="stat-label">Founded</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-card">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Employees</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-card">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Branches</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-card">
+          <div class="stat-num">∞</div>
+          <div class="stat-label">Opportunities</div>
+        </div>
+      </div>
     </div>
 
-    <div class="header">
-        <h1>About EDINTERN</h1>
+    <!-- Overview -->
+    <div class="ed-card mb-4">
+      <div class="ed-card-header">
+        <div class="card-icon"><i class="bi bi-building"></i></div>
+        <h3>Company Overview</h3>
+      </div>
+      <div class="ed-card-body">
+        <p style="font-size:.97rem; color:var(--text); line-height:1.8;">
+          <strong>EDINTERN</strong> was founded by <strong>Pravin PR</strong> in <strong>2022</strong> with a vision to provide top-tier internship and job opportunities across India. From a single branch in Salem, the company has rapidly expanded and is now a trusted platform for students and professionals seeking meaningful career growth.
+        </p>
+      </div>
     </div>
 
-    <div class="content">
-        <h2>Company Overview</h2>
-        <p><strong>EDINTERN</strong> was created by <strong>Pravin PR</strong> in 2022 with a vision to provide top-tier internship and job opportunities across India. The company has quickly grown into a trusted platform for students and professionals.</p>
-
+    <!-- Leadership -->
+    <div class="ed-card mb-4">
+      <div class="ed-card-header">
+        <div class="card-icon"><i class="bi bi-people"></i></div>
         <h3>Leadership Team</h3>
-        <ul>
-            <li><strong>CEO:</strong> Karthikeyan S</li>
-            <li><strong>Salem Branch Manager:</strong> Sanjay HS</li>
-            <li><strong>Chennai Branch Manager:</strong> Pranav</li>
-        </ul>
-
-        <h3>Branches</h3>
-
-        <div class="branch">
-            <h4>Salem Branch (Established 2022)</h4>
-            <div class="info">
-                <p><strong>Address:</strong> 5-6/195A, First Floor, Gokulkrishnan Street,<br>
-                Advaitha Ashram Road, Salem, Tamil Nadu 636004</p>
-                <p><strong>Phone:</strong> +91 93644 12345</p>
-                <p><strong>Website:</strong> <a href="https://techquest.asia" target="_blank">techquest.asia</a></p>
-                <p><strong>Working Hours:</strong> Closed · Opens tomorrow at 09:00</p>
-                <p><strong>Employees:</strong> 250</p>
+      </div>
+      <div class="ed-card-body" style="padding-top:1rem;">
+        <div class="d-flex flex-wrap justify-content-start">
+          <div class="team-pill">
+            <div class="avatar"><i class="bi bi-star"></i></div>
+            <div>
+              <div class="role">Founder</div>
+              <div class="name">Pravin PR</div>
             </div>
-        </div>
-
-        <div class="branch">
-            <h4>Chennai Branch (Established 2024)</h4>
-            <div class="info">
-                <p><strong>Address:</strong> NEW NO:17, OLD NO:01, Navalar High Road,<br>
-                Saligramam, Chennai, Tamil Nadu 600093</p>
-                <p><strong>Phone:</strong> +91 89393 21801</p>
-                <p><strong>Employees:</strong> 250</p>
+          </div>
+          <div class="team-pill">
+            <div class="avatar"><i class="bi bi-person-badge"></i></div>
+            <div>
+              <div class="role">CEO</div>
+              <div class="name">Karthikeyan S</div>
             </div>
+          </div>
+          <div class="team-pill">
+            <div class="avatar"><i class="bi bi-geo-alt"></i></div>
+            <div>
+              <div class="role">Salem Branch Manager</div>
+              <div class="name">Sanjay HS</div>
+            </div>
+          </div>
+          <div class="team-pill">
+            <div class="avatar"><i class="bi bi-geo-alt"></i></div>
+            <div>
+              <div class="role">Chennai Branch Manager</div>
+              <div class="name">Pranav</div>
+            </div>
+          </div>
         </div>
-
-        <h3>Contact & Support</h3>
-        <p>For more details or queries, reach out to our support team:</p>
-        <ul>
-            <li>Email: <a href="mailto:info@edintern.com">info@edintern.com</a></li>
-            <li>Phone: +91 93644 12345 (Salem) / +91 89393 21801 (Chennai)</li>
-            <li>Website: <a href="https://techquest.asia" target="_blank">www.techquest.asia</a></li>
-        </ul>
+      </div>
     </div>
 
-    <div class="footer">
-        &copy; 2023 EDINTERN. All rights reserved.
+    <!-- Branches -->
+    <h3 class="mb-3" style="color:var(--navy);">Our Branches</h3>
+    <div class="row g-4 mb-5">
+      <div class="col-md-6">
+        <div class="branch-card h-100">
+          <div class="branch-head">
+            <i class="bi bi-geo-alt-fill" style="font-size:1.3rem; color:var(--gold);"></i>
+            <h4>Salem Branch <span class="ed-badge ms-2">Est. 2022</span></h4>
+          </div>
+          <div class="branch-body">
+            <p><i class="bi bi-building"></i> 5-6/195A, First Floor, Gokulkrishnan Street,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Advaitha Ashram Road, Salem, Tamil Nadu 636004</p>
+            <p><i class="bi bi-telephone"></i> +91 93644 12345</p>
+            <p><i class="bi bi-globe"></i> <a href="https://techquest.asia" target="_blank">techquest.asia</a></p>
+            <p><i class="bi bi-clock"></i> Opens at 09:00 AM</p>
+            <p><i class="bi bi-people"></i> 250 Employees</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="branch-card h-100">
+          <div class="branch-head">
+            <i class="bi bi-geo-alt-fill" style="font-size:1.3rem; color:var(--gold);"></i>
+            <h4>Chennai Branch <span class="ed-badge ms-2">Est. 2024</span></h4>
+          </div>
+          <div class="branch-body">
+            <p><i class="bi bi-building"></i> NEW NO:17, OLD NO:01, Navalar High Road,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Saligramam, Chennai, Tamil Nadu 600093</p>
+            <p><i class="bi bi-telephone"></i> +91 89393 21801</p>
+            <p><i class="bi bi-people"></i> 250 Employees</p>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <!-- Contact -->
+    <div class="ed-card">
+      <div class="ed-card-header">
+        <div class="card-icon"><i class="bi bi-envelope"></i></div>
+        <h3>Contact &amp; Support</h3>
+      </div>
+      <div class="ed-card-body">
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="d-flex align-items-start gap-3">
+              <div style="width:38px;height:38px;background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <i class="bi bi-envelope text-white"></i>
+              </div>
+              <div>
+                <div style="font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:600;">Email</div>
+                <a href="mailto:info@edintern.com" style="font-size:.92rem;">info@edintern.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="d-flex align-items-start gap-3">
+              <div style="width:38px;height:38px;background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <i class="bi bi-telephone text-white"></i>
+              </div>
+              <div>
+                <div style="font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:600;">Phone</div>
+                <div style="font-size:.92rem;">+91 93644 12345 (Salem)</div>
+                <div style="font-size:.92rem;">+91 89393 21801 (Chennai)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="d-flex align-items-start gap-3">
+              <div style="width:38px;height:38px;background:linear-gradient(135deg,var(--navy),var(--navy-light));border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <i class="bi bi-globe text-white"></i>
+              </div>
+              <div>
+                <div style="font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:600;">Website</div>
+                <a href="https://techquest.asia" target="_blank" style="font-size:.92rem;">www.techquest.asia</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="ed-footer">
+    &copy; 2024 <strong>EDINTERN</strong>. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

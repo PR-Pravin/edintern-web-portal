@@ -1,146 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>EDINTERN - Login</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            background-color: #f2f2f2;
-            color: #333;
-        }
-        
-        /* Navigation styles from home page */
-        #nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #1f3c88;
-            padding: 10px 20px;
-            color: white;
-        }
-        #nav img {
-            height: 50px;
-        }
-        #nav ul {
-            list-style-type: none;
-            display: flex;
-            gap: 20px;
-        }
-        #nav ul li {
-            display: inline;
-        }
-        #nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        #nav ul li a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            #nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-
-        /* Login container styles */
-        .login-container {
-            width: 300px;
-            margin: 50px auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        .login-container h2 {
-            color: #1f3c88;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        input[type=text], input[type=password] {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        input[type=submit] {
-            width: 100%;
-            padding: 12px;
-            background-color: #1f3c88;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        input[type=submit]:hover {
-            background-color: #0e2d68;
-        }
-
-        label {
-            font-weight: bold;
-        }
-
-        @media (max-width: 400px) {
-            .login-container {
-                width: 90%;
-                padding: 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDINTERN – Login</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Added navigation from home page -->
-    <div id="nav">
-        <div>
-            <img src="logo1.jpeg" alt="EDINTERN Logo">
-            <img src="logo3.jpeg" alt="Accreditation" style="margin-left: 30px;">
-        </div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="internshipapp.html">Internship Application</a></li>
-            <li><a href="job application.html">Job Application</a></li>
-            <li><a href="login.html">Login</a></li>
+  <!-- ── Navbar ── -->
+  <nav class="ed-navbar navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="logo1.jpeg" alt="EDINTERN Logo" class="brand-logo">
+        <span class="brand-name">ED<span>INTERN</span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i>About</a></li>
+          <li class="nav-item"><a class="nav-link" href="internshipapp.html"><i class="bi bi-journal-text me-1"></i>Internship</a></li>
+          <li class="nav-item"><a class="nav-link" href="job_application.html"><i class="bi bi-briefcase me-1"></i>Job Application</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html"><i class="bi bi-person-circle me-1"></i>Login</a></li>
         </ul>
+      </div>
     </div>
+  </nav>
 
-    <div class="login-container">
+  <!-- ── Login Card ── -->
+  <div class="ed-login-wrap">
+    <div class="ed-login-card">
+
+      <div class="ed-login-top">
+        <div>
+          <i class="bi bi-shield-lock" style="font-size:2.5rem; color:var(--gold);"></i>
+        </div>
         <h2>Employee Login</h2>
-        <form onsubmit="return checkLogin()">
-            <label for="username">Username:</label>
-            <input type="text" id="username" required>
-            
-            <label for="password">Password:</label>
-            <input type="password" id="password" required>
-            
-            <input type="submit" value="Login">
-        </form>
-    </div>
+        <p>Sign in to access your EDINTERN account</p>
+      </div>
 
-    <script>
-        function checkLogin() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            if (username === "admin" && password === "1234") {
-                alert("Login successful!");
-                return true;
-            } else {
-                alert("Invalid credentials!");
-                return false;
-            }
-        }
-    </script>
+      <div class="ed-login-body">
+        <form id="loginForm" novalidate>
+
+          <div class="mb-1">
+            <label class="form-label fw-500">Username</label>
+          </div>
+          <div class="ed-input-group mb-3">
+            <i class="bi bi-person input-icon"></i>
+            <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+          </div>
+
+          <div class="mb-1">
+            <label class="form-label fw-500">Password</label>
+          </div>
+          <div class="ed-input-group mb-1" style="position:relative;">
+            <i class="bi bi-lock input-icon"></i>
+            <input type="password" class="form-control" id="password" placeholder="Enter password" required style="padding-right:3rem;">
+            <button type="button" id="togglePwd"
+              style="position:absolute;right:1rem;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--muted);cursor:pointer;padding:0;">
+              <i class="bi bi-eye" id="eyeIcon"></i>
+            </button>
+          </div>
+
+          <div class="text-end mb-3">
+            <a href="#" style="font-size:.82rem; color:var(--navy-light);">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn-ed-primary w-100">
+            <i class="bi bi-box-arrow-in-right me-2"></i>Login
+          </button>
+
+          <p class="text-center mt-3 mb-0" style="font-size:.82rem; color:var(--muted);">
+            <i class="bi bi-info-circle me-1"></i>Demo: username <strong>admin</strong> / password <strong>1234</strong>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    // Toggle password visibility
+    document.getElementById('togglePwd').addEventListener('click', function() {
+      const pwd = document.getElementById('password');
+      const icon = document.getElementById('eyeIcon');
+      if (pwd.type === 'password') {
+        pwd.type = 'text';
+        icon.className = 'bi bi-eye-slash';
+      } else {
+        pwd.type = 'password';
+        icon.className = 'bi bi-eye';
+      }
+    });
+  </script>
 </body>
 </html>

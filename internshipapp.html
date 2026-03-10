@@ -1,234 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>EDINTERN - Internship Registration</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            background-color: #f0f4f8;
-            color: #333;
-        }
-        
-        /* Navigation styles from home page */
-        #nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #1f3c88;
-            padding: 10px 20px;
-            color: white;
-        }
-        #nav img {
-            height: 50px;
-        }
-        #nav ul {
-            list-style-type: none;
-            display: flex;
-            gap: 20px;
-        }
-        #nav ul li {
-            display: inline;
-        }
-        #nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        #nav ul li a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            #nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-
-        /* Original form styles */
-        .header {
-            background-color: #1f3c88;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            clear: both;
-            margin-top: 20px;
-        }
-        .header img {
-            height: 50px;
-            float: left;
-            margin-right: 20px;
-        }
-        .header h2 {
-            margin: 0;
-        }
-        form {
-            background: white;
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
-        label {
-            font-weight: bold;
-            display: block;
-            margin-top: 15px;
-        }
-        input[type="text"],
-        input[type="date"],
-        select {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-        input[type="radio"],
-        input[type="checkbox"] {
-            margin-right: 10px;
-        }
-        input[type="button"] {
-            background-color: #1f3c88;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            margin-top: 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 16px;
-            width: 100%;
-        }
-        input[type="button"]:hover {
-            background-color: #0e2d68;
-        }
-        @media (max-width: 600px) {
-            form {
-                padding: 20px;
-                margin: 20px;
-            }
-            .header img {
-                float: none;
-                margin: 0 auto 10px;
-                display: block;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDINTERN – Internship Application</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Added navigation from home page -->
-    <div id="nav">
-        <div>
-            <img src="logo1.jpeg" alt="EDINTERN Logo">
-            <img src="logo3.jpeg" alt="Accreditation" style="margin-left: 30px;">
-        </div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="internshipapp.html">Internship Application</a></li>
-            <li><a href="job application.html">Job Application</a></li>
-            <li><a href="login.html">Login</a></li>
+  <!-- ── Navbar ── -->
+  <nav class="ed-navbar navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="logo1.jpeg" alt="EDINTERN Logo" class="brand-logo">
+        <span class="brand-name">ED<span>INTERN</span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i>About</a></li>
+          <li class="nav-item"><a class="nav-link" href="internshipapp.html"><i class="bi bi-journal-text me-1"></i>Internship</a></li>
+          <li class="nav-item"><a class="nav-link" href="job_application.html"><i class="bi bi-briefcase me-1"></i>Job Application</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html"><i class="bi bi-person-circle me-1"></i>Login</a></li>
         </ul>
+      </div>
     </div>
+  </nav>
 
-    <div class="header">
-       
-        <h2>EDINTERN Internship Application<sub></sub></h2>
-    </div>
+  <!-- ── Hero ── -->
+  <div class="ed-hero">
+    <h2><i class="bi bi-journal-text me-2"></i>Internship Application</h2>
+    <p>Fill in your details to apply for an internship program at EDINTERN.</p>
+    <div class="gold-bar"></div>
+  </div>
 
-    <form id="internForm">
-        <label for="name">Name:</label>
-        <input type="text" name="Name" placeholder="Enter your name" required>
+  <!-- ── Form ── -->
+  <div class="ed-form-wrap mx-auto" style="max-width:820px; margin-bottom:3rem;">
+    <form id="internForm" novalidate>
 
-        <label for="dob">Date of Birth:</label>
-        <input type="date" name="dob" required>
+      <!-- Section 1: Personal Info -->
+      <div class="ed-form-section">
+        <div class="ed-form-section-title"><span>01</span> Personal Information</div>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Full Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" name="name" placeholder="Enter your full name" required>
+            <div class="invalid-feedback">Please enter your name.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Date of Birth <span class="text-danger">*</span></label>
+            <input type="date" class="form-control" name="dob" required>
+            <div class="invalid-feedback">Please select your date of birth.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Email Address <span class="text-danger">*</span></label>
+            <input type="email" class="form-control" name="email" placeholder="name@example.com" required>
+            <div class="invalid-feedback">Please enter a valid email.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Phone Number <span class="text-danger">*</span></label>
+            <input type="tel" class="form-control" name="phone" placeholder="e.g. 9876543210" pattern="[0-9]{10}" required>
+            <div class="invalid-feedback">Enter a valid 10-digit phone number.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">WhatsApp Number <span class="text-danger">*</span></label>
+            <input type="tel" class="form-control" name="whatsapp" placeholder="e.g. 9876543210" required>
+            <div class="invalid-feedback">Required.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Aadhar Number <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" name="aadhar" placeholder="12-digit Aadhar number" maxlength="12" required>
+            <div class="invalid-feedback">Required.</div>
+          </div>
+        </div>
+      </div>
 
-        <label for="Email">Email:</label>
-        <input type="text" name="Email" placeholder="e.g. name@gmail.com" required>
+      <div class="divider mx-0" style="margin:0;"></div>
 
-        <label for="Phoneno">Phone-no:</label>
-        <input type="text" name="phone" required>
+      <!-- Section 2: Location -->
+      <div class="ed-form-section">
+        <div class="ed-form-section-title"><span>02</span> Location Details</div>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">State <span class="text-danger">*</span></label>
+            <select class="form-select" name="state" required>
+              <option value="" hidden>Select State</option>
+              <option value="ta">Tamil Nadu</option>
+              <option value="ka">Karnataka</option>
+              <option value="as">Assam</option>
+              <option value="ke">Kerala</option>
+            </select>
+            <div class="invalid-feedback">Please select a state.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">District <span class="text-danger">*</span></label>
+            <select class="form-select" name="district" required>
+              <option value="" hidden>Select District</option>
+              <option value="salem">Salem</option>
+              <option value="coimbatore">Coimbatore</option>
+              <option value="karur">Karur</option>
+              <option value="namakkal">Namakkal</option>
+              <option value="erode">Erode</option>
+            </select>
+            <div class="invalid-feedback">Please select a district.</div>
+          </div>
+        </div>
+      </div>
 
-        <label for="whatsappno">WhatsApp-no:</label>
-        <input type="text" name="whatsapp" required>
+      <div class="divider mx-0" style="margin:0;"></div>
 
-        <label for="aadno">Aadhar no:</label>
-        <input type="text" name="aadharno" required>
+      <!-- Section 3: Academic -->
+      <div class="ed-form-section">
+        <div class="ed-form-section-title"><span>03</span> Academic Details</div>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">College Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" name="college" placeholder="Your college name" required>
+            <div class="invalid-feedback">Required.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">College Address <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" name="collegeAddress" placeholder="College address" required>
+            <div class="invalid-feedback">Required.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Domain Type <span class="text-danger">*</span></label>
+            <select class="form-select" name="domainType" required>
+              <option value="" hidden>Select</option>
+              <option value="cs">College Student</option>
+              <option value="ot">Other</option>
+            </select>
+            <div class="invalid-feedback">Required.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Department <span class="text-danger">*</span></label>
+            <select class="form-select" name="department" required>
+              <option value="" hidden>Select Department</option>
+              <option value="cse">Computer Science and Engineering</option>
+              <option value="ece">Electronics and Communication Engineering</option>
+              <option value="eee">Electrical and Electronics Engineering</option>
+              <option value="ot">Other</option>
+            </select>
+            <div class="invalid-feedback">Required.</div>
+          </div>
+        </div>
+      </div>
 
-        <label for="State">State:</label>
-        <select name="state" required>
-            <option value="" hidden>Select</option>
-            <option value="ta">Tamil Nadu</option>
-            <option value="ka">Karnataka</option>
-            <option value="as">Assam</option>
-            <option value="ke">Kerala</option>
-        </select>
+      <div class="divider mx-0" style="margin:0;"></div>
 
-        <label for="DistrictName">District Name:</label>
-        <select name="District" required>
-            <option value="" hidden>Select</option>
-            <option value="s">Salem</option>
-            <option value="coi">Coimbatore</option>
-            <option value="ka">Karur</option>
-            <option value="na">Namakkal</option>
-            <option value="er">Erode</option>
-        </select>
+      <!-- Section 4: Program -->
+      <div class="ed-form-section">
+        <div class="ed-form-section-title"><span>04</span> Program Preferences</div>
+        <div class="row g-3">
+          <div class="col-12">
+            <label class="form-label">Mode of Internship <span class="text-danger">*</span></label>
+            <div class="d-flex gap-4">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="mode" id="offline" value="offline" required>
+                <label class="form-check-label" for="offline"><i class="bi bi-building me-1"></i>Offline</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="mode" id="online" value="online">
+                <label class="form-check-label" for="online"><i class="bi bi-wifi me-1"></i>Online</label>
+              </div>
+            </div>
+          </div>
 
-        <label for="collegename">College Name:</label>
-        <input type="text" name="colname" placeholder="College Name" required>
+          <div class="col-12">
+            <label class="form-label">Select Topic(s)</label>
+            <div class="d-flex flex-wrap gap-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="topic" id="wt" value="Web Technology">
+                <label class="form-check-label" for="wt">Web Technology</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="topic" id="pds" value="Python with Data Science">
+                <label class="form-check-label" for="pds">Python with Data Science</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="topic" id="pm" value="Python MySQL">
+                <label class="form-check-label" for="pm">Python MySQL</label>
+              </div>
+            </div>
+          </div>
 
-        <label for="collegeaddress">College Address:</label>
-        <input type="text" name="collegeaddress" placeholder="College Address" required>
+          <div class="col-md-6">
+            <label class="form-label">Other Topic (if any)</label>
+            <input type="text" class="form-control" name="otherTopic" placeholder="Specify any other topic">
+          </div>
 
-        <label for="domaintype">Domain Type:</label>
-        <select name="domaintype" required>
-            <option value="" hidden>Select</option>
-            <option value="cs">College Student</option>
-            <option value="ot">Other</option>
-        </select>
+          <div class="col-md-6">
+            <label class="form-label">Duration <span class="text-danger">*</span></label>
+            <select class="form-select" name="duration" required>
+              <option value="" hidden>Select Duration</option>
+              <option value="2w">2 Weeks</option>
+              <option value="4w">4 Weeks</option>
+              <option value="6w">6 Weeks</option>
+            </select>
+            <div class="invalid-feedback">Please select a duration.</div>
+          </div>
+        </div>
 
-        <label for="department">Department Name:</label>
-        <select name="department" required>
-            <option value="" hidden>Select</option>
-            <option value="cse">Computer Science and Engineering</option>
-            <option value="ece">Electronics and Communication Engineering</option>
-            <option value="eee">Electrical and Electronics Engineering</option>
-            <option value="ot">Other</option>
-        </select>
+        <div class="mt-4 text-center">
+          <button type="submit" class="btn-ed-primary px-5">
+            <i class="bi bi-send me-2"></i>Submit Application
+          </button>
+        </div>
+      </div>
 
-        <label>Mode:</label>
-        <input type="radio" name="mode" value="offline" required>Offline
-        <input type="radio" name="mode" value="online" required>Online
-
-        <label>Select Topic:</label>
-        <input type="checkbox" name="select" value="wt">Web Technology<br>
-        <input type="checkbox" name="select" value="pds">Python With Data Science<br>
-        <input type="checkbox" name="select" value="pm">Python MySQL<br>
-
-        <label for="otherTopic">Other Topic Name:</label>
-        <input type="text" name="otherTopic" placeholder="If any other topic">
-
-        <label for="duration">Duration:</label>
-        <select name="duration" required>
-            <option value="" hidden>Select</option>
-            <option value="2w">2 Weeks</option>
-            <option value="4w">4 Weeks</option>
-            <option value="6w">6 Weeks</option>
-        </select>
-
-        <input type="button" value="Submit" onclick="validateForm()">
     </form>
+  </div>
 
-    <script>
-        function validateForm() {
-            alert("Form submitted successfully!");
-            // You can add real validations here if needed.
-        }
-    </script>
+  <footer class="ed-footer">
+    &copy; 2024 <strong>EDINTERN</strong>. All rights reserved.
+  </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

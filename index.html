@@ -1,198 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>EDINTERN-Home</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            background-color: #f7f9fb;
-            color: #333;
-        }
-        #nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #1f3c88;
-            padding: 10px 20px;
-            color: white;
-        }
-        #nav img {
-            height: 50px;
-        }
-        #nav ul {
-            list-style-type: none;
-            display: flex;
-            gap: 20px;
-        }
-        #nav ul li {
-            display: inline;
-        }
-        #nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .slides {
-            position: relative;
-            max-width: 100%;
-            overflow: hidden;
-        }
-        .slide {
-            display: none;
-            width: 100%;
-        }
-        .slide img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-        }
-        .para {
-            padding: 20px;
-            background: #fff;
-            margin: 20px auto;
-            max-width: 90%;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        #a00 {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            padding: 20px;
-        }
-        .a00 {
-            background-color: white;
-            width: 45%;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .a00 h3 {
-            margin-top: 0;
-            color: #1f3c88;
-        }
-        .a00 ul {
-            padding-left: 20px;
-        }
-        @media (max-width: 768px) {
-            .a00 {
-                width: 90%;
-            }
-            #nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDINTERN – Home</title>
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="nav">
-        <div>
-            <img src="logo1.jpeg" alt="Logo">
-            <img src="logo3.jpeg" alt="Accreditation" style="margin-left: 30px;">
-        </div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="internshipapp.html">Internship Application</a></li>
-            <li><a href="employee_application.html">Job Application</a></li>
-            <li><a href="login.html">Login</a></li>
+  <!-- ── Navbar ── -->
+  <nav class="ed-navbar navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand ed-navbar-brand" href="index.html">
+        <img src="image/logo1.jpeg" alt="EDINTERN Logo" class="brand-logo">
+        <span class="brand-name">ED<span>INTERN</span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i>About</a></li>
+          <li class="nav-item"><a class="nav-link" href="internshipapp.html"><i class="bi bi-journal-text me-1"></i>Internship</a></li>
+          <li class="nav-item"><a class="nav-link" href="job_application.html"><i class="bi bi-briefcase me-1"></i>Job Application</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html"><i class="bi bi-person-circle me-1"></i>Login</a></li>
         </ul>
+      </div>
     </div>
+  </nav>
 
-    <div class="slides">
-        <div class="slide"><img src="img1.jpeg" alt="Slide 1"></div>
-        <div class="slide"><img src="img2.jpeg" alt="Slide 2"></div>
-        <div class="slide"><img src="img3.jpeg" alt="Slide 3"></div>
-        <div class="slide"><img src="img4.jpeg" alt="Slide 4"></div>
+  <!-- ── Hero Slider ── -->
+  <div class="ed-slider">
+    <div class="ed-slide">
+      <img src="image/img1.jpeg" alt="Internship 1">
+      <div class="ed-slide-caption">
+        <h2>Launch Your Career with the Right Internship</h2>
+        <p>Gain real-world experience and industry exposure across top domains.</p>
+      </div>
     </div>
-
-    <div class="para">
-        <p><strong>Internships</strong> offer valuable industry exposure, helping you build soft skills and professional knowledge. They are essential for preparing yourself for your dream career while gaining hands-on experience in your chosen field.</p>
+    <div class="ed-slide">
+      <img src="image/img2.jpeg" alt="Internship 2">
+      <div class="ed-slide-caption">
+        <h2>Technical & Non-Technical Opportunities</h2>
+        <p>From Software Engineering to Business Development — we have it all.</p>
+      </div>
     </div>
+    <div class="ed-slide">
+      <img src="image/img3.jpeg" alt="Internship 3">
+      <div class="ed-slide-caption">
+        <h2>Build Skills. Build Future.</h2>
+        <p>Structured courses and mentorship to prepare you for your dream role.</p>
+      </div>
+    </div>
+    <div class="ed-slide">
+      <img src="image/img4.jpeg" alt="Internship 4">
+      <div class="ed-slide-caption">
+        <h2>Trusted by Students Across India</h2>
+        <p>Join thousands of interns who have kickstarted their careers with EDINTERN.</p>
+      </div>
+    </div>
+    <div class="ed-slider-dots"></div>
+  </div>
 
-    <div id="a00">
-        <div class="a00">
+  <!-- ── Intro ── -->
+  <div class="ed-intro">
+    <strong>Internships</strong> offer valuable industry exposure, helping you build soft skills and professional knowledge. They are essential for preparing yourself for your dream career while gaining hands-on experience in your chosen field.
+  </div>
+
+  <!-- ── Program Cards ── -->
+  <div class="container-fluid px-4 section-gap">
+    <div class="row g-4">
+
+      <!-- Technical Internships -->
+      <div class="col-md-6 col-xl-3">
+        <div class="ed-card h-100">
+          <div class="ed-card-header">
+            <div class="card-icon"><i class="bi bi-cpu"></i></div>
             <h3>Technical Internships</h3>
+          </div>
+          <div class="ed-card-body">
             <ul>
-                <li>Technology Internship Program</li>
-                <li>Software Engineering Internship</li>
-                <li>IT Internship</li>
-                <li>Data Science Internship</li>
-                <li>Cybersecurity Internship</li>
-                <li>Web Development Internship</li>
-                <li>Network Engineering Internship</li>
-                <li>Computer Science Internship</li>
-                <li>Digital Marketing Internship</li>
-                <li>Hardware Engineering Internship</li>
+              <li>Technology Internship Program</li>
+              <li>Software Engineering Internship</li>
+              <li>IT Internship</li>
+              <li>Data Science Internship</li>
+              <li>Cybersecurity Internship</li>
+              <li>Web Development Internship</li>
+              <li>Network Engineering Internship</li>
+              <li>Computer Science Internship</li>
+              <li>Digital Marketing Internship</li>
+              <li>Hardware Engineering Internship</li>
             </ul>
+          </div>
         </div>
+      </div>
 
-        <div class="a00">
+      <!-- Technical Courses -->
+      <div class="col-md-6 col-xl-3">
+        <div class="ed-card h-100">
+          <div class="ed-card-header">
+            <div class="card-icon"><i class="bi bi-code-slash"></i></div>
             <h3>Technical Courses</h3>
+          </div>
+          <div class="ed-card-body">
             <ul>
-                <li>Computer Science Fundamentals</li>
-                <li>Programming with Python</li>
-                <li>Data Structures and Algorithms</li>
-                <li>Web Development</li>
-                <li>Machine Learning and AI</li>
-                <li>Cybersecurity</li>
-                <li>Cloud Computing</li>
-                <li>Network Administration</li>
-                <li>Database Management</li>
-                <li>Software Engineering</li>
+              <li>Computer Science Fundamentals</li>
+              <li>Programming with Python</li>
+              <li>Data Structures and Algorithms</li>
+              <li>Web Development</li>
+              <li>Machine Learning and AI</li>
+              <li>Cybersecurity</li>
+              <li>Cloud Computing</li>
+              <li>Network Administration</li>
+              <li>Database Management</li>
+              <li>Software Engineering</li>
             </ul>
+          </div>
         </div>
+      </div>
 
-        <div class="a00">
+      <!-- Non-Technical Internships -->
+      <div class="col-md-6 col-xl-3">
+        <div class="ed-card h-100">
+          <div class="ed-card-header">
+            <div class="card-icon"><i class="bi bi-people"></i></div>
             <h3>Non-Technical Internships</h3>
+          </div>
+          <div class="ed-card-body">
             <ul>
-                <li>Marketing and Communications Internship</li>
-                <li>Business Development Internship</li>
-                <li>HR Internship</li>
-                <li>Finance and Accounting Internship</li>
-                <li>Customer Relations Internship</li>
-                <li>Public Relations Internship</li>
-                <li>Graphic Design Internship</li>
-                <li>Event Planning Internship</li>
-                <li>Content Writing Internship</li>
+              <li>Marketing & Communications</li>
+              <li>Business Development</li>
+              <li>HR Internship</li>
+              <li>Finance & Accounting</li>
+              <li>Customer Relations</li>
+              <li>Public Relations</li>
+              <li>Graphic Design</li>
+              <li>Event Planning</li>
+              <li>Content Writing</li>
             </ul>
+          </div>
         </div>
+      </div>
 
-        <div class="a00">
+      <!-- Non-Technical Courses -->
+      <div class="col-md-6 col-xl-3">
+        <div class="ed-card h-100">
+          <div class="ed-card-header">
+            <div class="card-icon"><i class="bi bi-book"></i></div>
             <h3>Non-Technical Courses</h3>
+          </div>
+          <div class="ed-card-body">
             <ul>
-                <li>Business Management & Leadership</li>
-                <li>Marketing Strategies</li>
-                <li>Accounting & Financial Management</li>
-                <li>Human Resource Management</li>
-                <li>Project Management</li>
-                <li>Communication Skills</li>
-                <li>Time Management</li>
-                <li>Conflict Resolution</li>
-                <li>Personal Development</li>
+              <li>Business Management &amp; Leadership</li>
+              <li>Marketing Strategies</li>
+              <li>Accounting &amp; Financial Management</li>
+              <li>Human Resource Management</li>
+              <li>Project Management</li>
+              <li>Communication Skills</li>
+              <li>Time Management</li>
+              <li>Conflict Resolution</li>
+              <li>Personal Development</li>
             </ul>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.display = i === index ? 'block' : 'none';
-            });
-        }
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-        setInterval(nextSlide, 3000); // 3 seconds per slide
-        showSlide(currentSlide);
-    </script>
+    </div>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer class="ed-footer">
+    &copy; 2024 <strong>EDINTERN</strong>. All rights reserved. &nbsp;|&nbsp; Empowering Careers Across India.
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
